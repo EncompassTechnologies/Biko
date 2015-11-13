@@ -1,2 +1,2 @@
 # Biko
-Encompass Communications Library
+Open Communications Library
