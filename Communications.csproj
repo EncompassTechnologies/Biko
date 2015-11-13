@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9AEB908-3E03-46C5-86DC-534BFA3341A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Communications</RootNamespace>
+    <AssemblyName>Communications</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Builds\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Builds\Current\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>1</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DebugSymbols>true</DebugSymbols>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cryptography\DecryptAsyncCompletedEventArgs.cs" />
+    <Compile Include="Cryptography\EncryptAsyncCompletedEventArgs.cs" />
+    <Compile Include="Cryptography\SignAsyncCompletedEventArgs.cs" />
+    <Compile Include="Cryptography\GnuPGBadPassphraseException.cs" />
+    <Compile Include="Cryptography\GnuPGException.cs" />
+    <Compile Include="Cryptography\GnuPG.cs" />
+    <Compile Include="Cryptography\GnuPGKey.cs" />
+    <Compile Include="Cryptography\GnuPGKeyCollection.cs" />
+    <Compile Include="Net\FtpClient.cs" />
+    <Compile Include="Net\Ftp\FtpCmd.cs" />
+    <Compile Include="Communications.cs" />
+    <Compile Include="Net\Imap\Attachment.cs" />
+    <Compile Include="Net\Imap\Authentication\ImapCredentials.cs" />
+    <Compile Include="Net\Imap\Authentication\OAuth2Credentials.cs" />
+    <Compile Include="Net\Imap\Authentication\PlainCredentials.cs" />
+    <Compile Include="Net\Imap\Capability.cs" />
+    <Compile Include="Net\Imap\ClientBehavior.cs" />
+    <Compile Include="Net\Imap\Collections\CommonFolderCollection.cs" />
+    <Compile Include="Net\Imap\Collections\FolderCollection.cs" />
+    <Compile Include="Net\Imap\Collections\FolderFlagCollection.cs" />
+    <Compile Include="Net\Imap\Collections\GMailMessageLabelCollection.cs" />
+    <Compile Include="Net\Imap\Collections\GMailThreadCollection.cs" />
+    <Compile Include="Net\Imap\Collections\ImapObjectCollection.cs" />
+    <Compile Include="Net\Imap\Collections\MessageCollection.cs" />
+    <Compile Include="Net\Imap\Collections\MessageFlagCollection.cs" />
+    <Compile Include="Net\Imap\Constants\FolderStatusFields.cs" />
+    <Compile Include="Net\Imap\Constants\ImapCommands.cs" />
+    <Compile Include="Net\Imap\Constants\MessageHeader.cs" />
+    <Compile Include="Net\Imap\Constants\MessageHeaderSets.cs" />
+    <Compile Include="Net\Imap\Constants\ResponseType.cs" />
+    <Compile Include="Net\Imap\EncodingHelpers\Base64.cs" />
+    <Compile Include="Net\Imap\EncodingHelpers\BodyDecoder.cs" />
+    <Compile Include="Net\Imap\EncodingHelpers\ImapUTF7.cs" />
+    <Compile Include="Net\Imap\EncodingHelpers\StringDecoder.cs" />
+    <Compile Include="Net\Imap\Enums\BodyType.cs" />
+    <Compile Include="Net\Imap\Enums\ContentTransferEncoding.cs" />
+    <Compile Include="Net\Imap\Enums\FolderTreeBrowseMode.cs" />
+    <Compile Include="Net\Imap\Enums\IdleState.cs" />
+    <Compile Include="Net\Imap\Enums\MessageFetchMode.cs" />
+    <Compile Include="Net\Imap\Enums\MessageFetchState.cs" />
+    <Compile Include="Net\Imap\Enums\MessageImportance.cs" />
+    <Compile Include="Net\Imap\Enums\MessageParseState.cs" />
+    <Compile Include="Net\Imap\Enums\MessageSensitivity.cs" />
+    <Compile Include="Net\Imap\Envelope.cs" />
+    <Compile Include="Net\Imap\Exceptions\InvalidStateException.cs" />
+    <Compile Include="Net\Imap\Exceptions\OperationFailedException.cs" />
+    <Compile Include="Net\Imap\Exceptions\ServerAlertException.cs" />
+    <Compile Include="Net\Imap\Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Net\Imap\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Net\Imap\Extensions\EnumExtensions.cs" />
+    <Compile Include="Net\Imap\Extensions\MailMessageExtensions.cs" />
+    <Compile Include="Net\Imap\Extensions\StringExtensions.cs" />
+    <Compile Include="Net\Imap\Flags\FolderFlags.cs" />
+    <Compile Include="Net\Imap\Flags\MessageFlags.cs" />
+    <Compile Include="Net\Imap\Folder.cs" />
+    <Compile Include="Net\Imap\GMailMessageThread.cs" />
+    <Compile Include="Net\Imap\IdleEventArgs.cs" />
+    <Compile Include="Net\Imap\ImapBase.cs" />
+    <Compile Include="Net\Imap\ImapClient.cs" />
+    <Compile Include="Net\Imap\MailAddress.cs" />
+    <Compile Include="Net\Imap\Message.cs" />
+    <Compile Include="Net\Imap\MessageBody.cs" />
+    <Compile Include="Net\Imap\MessageBuilder.cs" />
+    <Compile Include="Net\Imap\MessageContent.cs" />
+    <Compile Include="Net\Imap\MessageUploader.cs" />
+    <Compile Include="Net\Imap\Parsing\BodyStructureParser.cs" />
+    <Compile Include="Net\Imap\Parsing\CommandProcessor.cs" />
+    <Compile Include="Net\Imap\Parsing\Expressions.cs" />
+    <Compile Include="Net\Imap\Parsing\HeaderFieldParser.cs" />
+    <Compile Include="Net\VLTraderClient.cs" />
+    <Compile Include="Net\Ftp\ConnectionClosedEventArgs.cs" />
+    <Compile Include="Net\Mailbox.cs" />
+    <Compile Include="Net\Proxy\CreateConnectionAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\FtpRequestEventArgs.cs" />
+    <Compile Include="Net\Ftp\FtpResponseEventArgs.cs" />
+    <Compile Include="Net\Ftp\FtpTransferEventArgs.cs" />
+    <Compile Include="Net\Ftp\FxpCopyAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\GetDirListAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\GetDirListDeepAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\GetFileAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\OpenAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\PutFileAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\PutFileUniqueAsyncCompletedEventArgs.cs" />
+    <Compile Include="Net\Ftp\TransferCompleteEventArgs.cs" />
+    <Compile Include="Net\Ftp\TransferProgressEventArgs.cs" />
+    <Compile Include="Net\Ftp\ValidateServerCertificateEventArgs.cs" />
+    <Compile Include="Net\Ftp\FtpAsynchronousOperationException.cs" />
+    <Compile Include="Net\Ftp\FtpAuthenticationException.cs" />
+    <Compile Include="Net\Ftp\FtpCertificateValidationException.cs" />
+    <Compile Include="Net\Ftp\FtpCommandResponseTimeoutException.cs" />
+    <Compile Include="Net\Ftp\FtpConnectionBrokenException.cs" />
+    <Compile Include="Net\Ftp\FtpConnectionClosedException.cs" />
+    <Compile Include="Net\Ftp\FtpConnectionOpenException.cs" />
+    <Compile Include="Net\Ftp\FtpDataCompressionException.cs" />
+    <Compile Include="Net\Ftp\FtpDataConnectionException.cs" />
+    <Compile Include="Net\Ftp\FtpDataConnectionTimeoutException.cs" />
+    <Compile Include="Net\Ftp\FtpDataTransferException.cs" />
+    <Compile Include="Net\Ftp\FtpException.cs" />
+    <Compile Include="Net\Ftp\FtpFileIntegrityException.cs" />
+    <Compile Include="Net\Ftp\FtpLoginException.cs" />
+    <Compile Include="Net\Ftp\FtpProxyException.cs" />
+    <Compile Include="Net\Ftp\FtpResponseException.cs" />
+    <Compile Include="Net\Ftp\FtpSecureConnectionException.cs" />
+    <Compile Include="Net\Proxy\ProxyException.cs" />
+    <Compile Include="Cryptography\Crc32.cs" />
+    <Compile Include="Net\Ftp\FtpBase.cs" />
+    <Compile Include="Net\Ftp\FtpGenericParser.cs" />
+    <Compile Include="Net\Ftp\FtpItem.cs" />
+    <Compile Include="Net\Ftp\FtpItemCollection.cs" />
+    <Compile Include="Net\Ftp\FtpRequest.cs" />
+    <Compile Include="Net\Ftp\FtpResponse.cs" />
+    <Compile Include="Net\Ftp\FtpResponseCollection.cs" />
+    <Compile Include="Net\Ftp\FtpResponseQueue.cs" />
+    <Compile Include="Net\Ftp\IFtpItemParser.cs" />
+    <Compile Include="Net\Proxy\HttpProxyClient.cs" />
+    <Compile Include="Net\Proxy\IProxyClient.cs" />
+    <Compile Include="Net\Proxy\ProxyClientFactory.cs" />
+    <Compile Include="Net\Proxy\Socks4aProxyClient.cs" />
+    <Compile Include="Net\Proxy\Socks4ProxyClient.cs" />
+    <Compile Include="Net\Proxy\Socks5ProxyClient.cs" />
+    <Compile Include="Net\Proxy\Utils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
